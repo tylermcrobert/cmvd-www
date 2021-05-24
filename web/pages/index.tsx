@@ -1,21 +1,20 @@
 import { NextPage } from "next";
 import { HomepageLayout } from "../components/HomepageLayout";
+import { HomepageProject } from "../components/HomepageProject";
 import { SITE_NAME } from "../constants";
-import { client, urlFor } from "../lib/sanity";
+import { client, SanityImage } from "../lib/sanity";
 
-type ProjectData = {
-  date?: string;
-  images?: {}[];
-  location?: string;
-  roles?: string[];
+export type ProjectData = {
+  date: string;
+  images: SanityImage[];
+  location: string | null;
+  roles: string[];
   title: string;
 };
 
 const Home: NextPage<{
-  data?: ProjectData[];
+  data?: Partial<ProjectData>[];
 }> = ({ data }) => {
-  console.log(data);
-
   return (
     <HomepageLayout>
       <aside>
@@ -40,13 +39,13 @@ const Home: NextPage<{
       <main>
         <ul>
           {data?.map((project) => (
-            <li>
-              {project.images?.map((image) => {
-                const url = urlFor(image).width(1440).url();
-                if (url) return <img src={url} />;
-              })}
-              {project.title}
-            </li>
+            <HomepageProject
+              date={project.date || ""}
+              title={project.title || "title"}
+              images={project.images || []}
+              location={project.location || null}
+              roles={project.roles || []}
+            />
           ))}
         </ul>
       </main>
