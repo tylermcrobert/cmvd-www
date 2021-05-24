@@ -1,23 +1,16 @@
 import { NextPage } from "next";
-import { useState } from "react";
-import { useRouter } from "next/router";
-
-import { client, SanityImage, urlFor } from "../lib/sanity";
-
-const OVERVIEW_SLUG = "overview";
-
-const getThumbnail = (img: SanityImage) => {
-  const THUMB_IMAGE_WIDTH = 960;
-  const imageUrl = urlFor(img).width(THUMB_IMAGE_WIDTH).url() || "";
-  return imageUrl;
-};
+import { client } from "../lib/sanity";
 
 const Home: NextPage<{
   data: {};
 }> = ({ data }) => {
   console.log(data);
 
-  return <div>homepage here</div>;
+  return (
+    <div>
+      homepage here<pre>{JSON.stringify(data)}</pre>
+    </div>
+  );
 };
 
 export async function getServerSideProps() {

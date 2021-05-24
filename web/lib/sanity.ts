@@ -4,7 +4,7 @@ import imageUrlBuilder from "@sanity/image-url";
 export type SanityImage = any;
 
 export const client = sanityClient({
-  projectId: "4kvint4g",
+  projectId: "q11hh7zt",
   dataset: "production",
   useCdn: false, // `false` if you want to ensure fresh data
   apiVersion: "2021-03-25", // use a UTC date string
