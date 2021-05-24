@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { HomepageLayout } from "../components/HomepageLayout";
 import { SITE_NAME } from "../constants";
 import { client, urlFor } from "../lib/sanity";
 
@@ -16,7 +17,7 @@ const Home: NextPage<{
   console.log(data);
 
   return (
-    <>
+    <HomepageLayout>
       <aside>
         <h1>{SITE_NAME}</h1>
         <ul>
@@ -49,7 +50,7 @@ const Home: NextPage<{
           ))}
         </ul>
       </main>
-    </>
+    </HomepageLayout>
   );
 };
 
