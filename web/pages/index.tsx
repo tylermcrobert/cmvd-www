@@ -6,11 +6,11 @@ import { SITE_NAME } from "../constants";
 import { client, SanityImage } from "../lib/sanity";
 
 export type ProjectData = {
-  date: string;
   images: SanityImage[];
   location: string | null;
   roles: string[];
   title: string;
+  year: string;
 };
 
 const Home: NextPage<{
@@ -29,7 +29,7 @@ const Home: NextPage<{
             <li>
               <Title
                 title={project.title || "Title"}
-                date={project.date || null}
+                year={project.year || null}
                 location={project.location || null}
               />
             </li>
@@ -41,7 +41,7 @@ const Home: NextPage<{
         <ul>
           {data?.map((project) => (
             <HomepageProject
-              date={project.date || ""}
+              year={project.year || ""}
               title={project.title || "title"}
               images={project.images || []}
               location={project.location || null}

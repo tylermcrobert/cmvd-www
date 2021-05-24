@@ -7,7 +7,7 @@ import { Title } from "./Title";
 export const HomepageProject: React.FC<ProjectData> = ({
   images,
   title,
-  date,
+  year,
   location,
   roles,
 }) => {
@@ -33,7 +33,7 @@ export const HomepageProject: React.FC<ProjectData> = ({
       </ImagesWrapper>
       <InformationBar>
         <h2>
-          <Title title={title} location={location} date={date} />
+          <Title title={title} location={location} year={year} />
         </h2>
         <p>{roles.join(", ")}</p>
       </InformationBar>
