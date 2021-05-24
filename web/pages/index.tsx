@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { SITE_NAME } from "../constants";
-import { client } from "../lib/sanity";
+import { client, urlFor } from "../lib/sanity";
 
 type ProjectData = {
   date?: string;
@@ -40,9 +40,10 @@ const Home: NextPage<{
         <ul>
           {data?.map((project) => (
             <li>
-              {project.images?.map((image) => (
-                <div>image</div>
-              ))}
+              {project.images?.map((image) => {
+                const url = urlFor(image).width(1440).url();
+                if (url) return <img src={url} />;
+              })}
               {project.title}
             </li>
           ))}
