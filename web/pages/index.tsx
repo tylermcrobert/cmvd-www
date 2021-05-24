@@ -53,7 +53,7 @@ const Home: NextPage<{
 };
 
 export async function getServerSideProps() {
-  const data = await client.fetch(`*[]`);
+  const data = await client.fetch(`*[_type == 'project']`);
 
   return {
     props: { data },
