@@ -120,7 +120,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -141,43 +141,27 @@ table {
 }
 
 @font-face {
-  font-family: 'Basis Grotesque';
-  src: url('/BasisGrotesquePro-Bold.otf');
+  font-family: "Basis Grotesque";
+  src: url("/BasisGrotesquePro-Bold.otf");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: 'Basis Grotesque';
-  src: url('/BasisGrotesquePro-Medium.otf');
+  font-family: "Basis Grotesque";
+  src: url("/BasisGrotesquePro-Medium.otf");
   font-weight: 400;
 }
 @font-face {
-  font-family: 'Basis Grotesque';
-  src: url('/BasisGrotesquePro-Regular.otf');
+  font-family: "Basis Grotesque";
+  src: url("/BasisGrotesquePro-Regular.otf");
   font-weight: 300;
 }
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Basis Grotesque', -apple-system, BlinkMacSystemFont, Segoe UI,
-    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    sans-serif;
-
   background: var(--color-background);
   color: var(--color-primary);
-  line-height: 1.4;
-  font-size: 14px;
-
-  overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  html,
-  body {
-    font-size: 16px;
-  }
+  line-height: 1.3;
 }
 
 a {
