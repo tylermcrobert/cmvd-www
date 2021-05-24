@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { urlFor } from "../lib/sanity";
 import { ProjectData } from "../pages";
+import { Title } from "./Title";
 
 export const HomepageProject: React.FC<ProjectData> = ({
   images,
@@ -31,16 +32,16 @@ export const HomepageProject: React.FC<ProjectData> = ({
         })}
       </ImagesWrapper>
       <InformationBar>
-        <h2>{title}</h2>
+        <h2>
+          <Title title={title} location={location} date={date} />
+        </h2>
         <p>{roles.join(", ")}</p>
       </InformationBar>
     </HomepageProjectStyle>
   );
 };
 
-const HomepageProjectStyle = styled.article`
-  /* border: 1px solid magenta; */
-`;
+const HomepageProjectStyle = styled.article``;
 
 const ImagesWrapper = styled.div`
   position: relative;

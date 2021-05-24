@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { HomepageLayout } from "../components/HomepageLayout";
 import { HomepageProject } from "../components/HomepageProject";
+import { Title } from "../components/Title";
 import { SITE_NAME } from "../constants";
 import { client, SanityImage } from "../lib/sanity";
 
@@ -26,11 +27,11 @@ const Home: NextPage<{
         <ul>
           {data?.map((project) => (
             <li>
-              {project.title} (
-              {project.location &&
-                project.date &&
-                `${project.location} ${new Date(project.date).getFullYear()}`}
-              )
+              <Title
+                title={project.title || "Title"}
+                date={project.date || null}
+                location={project.location || null}
+              />
             </li>
           ))}
         </ul>
